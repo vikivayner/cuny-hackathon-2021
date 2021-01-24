@@ -1,0 +1,4 @@
+Parking_Violations_Issued_._Fiscal_Year_2014__August_2013___June_2014_ <- read.csv("~/Desktop/archive/Parking_Violations_Issued_-_Fiscal_Year_2014__August_2013___June_2014_.csv")
+
+colnames(Parking_Violations_Issued_._Fiscal_Year_2014__August_2013___June_2014_)
+

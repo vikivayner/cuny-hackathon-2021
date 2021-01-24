@@ -32,12 +32,31 @@ fix_vio_Aug2013Aug2014 <- new_Aug2013June2014 %>% mutate(Violation.County= case_
                                                                                      Violation.County == "RC" ~ "RICHMOND",
                                                                                      Violation.County == "RICH" ~ "RICHMOND", 
                                                                                      Violation.County == "R" ~ "RICHMOND",
+                                                                                     TRUE ~ Violation.County))
         
                                                                                      
- #looking over violation.county for unique values                                                                                                                                                                  TRUE ~ Violation.County))
+ #looking over violation.county for unique values                                                                                                         
 unique_county <- print(unique(fix_vio_Aug2013Aug2014[c("Violation.County")]))
 #looking at unique precincts 
 unique_precinct<- print(unique(fix_vio_Aug2013Aug2014[c("Violation.Precinct")]))
 
 
 write.csv(fix_vio_Aug2013Aug2014, file = "CUNY Hackathon Aug2013June2014.csv")
+
+
+pct_zip_codes <- read.csv("~/Downloads/pct_zip_codes.csv")
+
+fiscal_2017 <- read.csv("~/Desktop/CUNY_Hackathon Year_2017.csv")
+
+colnames(fiscal_2017)
+
+names(fiscal_2017)[13] <- "pct"
+
+after_merge2017 <- merge(x = pct_zip_codes, y = fiscal_2017, by = "pct" , all.y = TRUE)
+
+colnames(after_merge2017)
+library(tidyverse)
+
+glimpse(after_merge2017)
+
+summary(after_merge2017)

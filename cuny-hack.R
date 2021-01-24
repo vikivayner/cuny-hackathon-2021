@@ -40,4 +40,4 @@ unique_county <- print(unique(fix_vio_Aug2013Aug2014[c("Violation.County")]))
 unique_precinct<- print(unique(fix_vio_Aug2013Aug2014[c("Violation.Precinct")]))
 
 
-write.csv(new_Aug2013June2014, file = "CUNY Hackathon Aug2013June2014.csv")
+write.csv(fix_vio_Aug2013Aug2014, file = "CUNY Hackathon Aug2013June2014.csv")

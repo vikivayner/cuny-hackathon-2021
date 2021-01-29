@@ -41,19 +41,19 @@ unique_county <- print(unique(fix_vio_Aug2013Aug2014[c("Violation.County")]))
 unique_precinct<- print(unique(fix_vio_Aug2013Aug2014[c("Violation.Precinct")]))
 
 
-write.csv(fix_vio_Aug2013Aug2014, file = "CUNY Hackathon Aug2013June2014.csv")
-
-
+#reading precinct zipcodes 
 pct_zip_codes <- read.csv("~/Downloads/pct_zip_codes.csv")
-
+#reading updated fiscal 2017 year to ultimately combine multiple data sets. 
 fiscal_2017 <- read.csv("~/Desktop/CUNY_Hackathon Year_2017.csv")
-
+#taking a glimpse at the information
 colnames(fiscal_2017)
-
+#changing name of column for merge
 names(fiscal_2017)[13] <- "pct"
 
+#doing a right outter merge with data and precinct codes. 
 after_merge2017 <- merge(x = pct_zip_codes, y = fiscal_2017, by = "pct" , all.y = TRUE)
 
+#taking a look at new data
 colnames(after_merge2017)
 library(tidyverse)
 

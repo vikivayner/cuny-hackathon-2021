@@ -41,6 +41,10 @@ unique_county <- print(unique(fix_vio_Aug2013Aug2014[c("Violation.County")]))
 unique_precinct<- print(unique(fix_vio_Aug2013Aug2014[c("Violation.Precinct")]))
 
 
+
+#merging data after it had been cleaned using the process above multiple times. 
+
+
 #reading precinct zipcodes 
 pct_zip_codes <- read.csv("~/Downloads/pct_zip_codes.csv")
 #reading updated fiscal 2017 year to ultimately combine multiple data sets. 
